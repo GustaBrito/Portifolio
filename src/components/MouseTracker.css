@@ -1,0 +1,129 @@
+/* Container que abriga os “olhos” */
+.wrapper {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 2rem;
+}
+
+/* Botão que representa cada olho */
+.btn-button {
+  background: #fff;
+  border: 1px transparent;
+  border-radius: 10rem;
+  cursor: pointer;
+  padding: 2rem;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.4) 5px 5px 15px inset;
+}
+
+/* Pupilas dos olhos, cada uma com z-index diferente */
+.left-eye .btn-pupil {
+  position: relative;
+  z-index: 120;
+}
+
+.right-eye .btn-pupil {
+  position: relative;
+  z-index: 110;
+}
+
+/* Ao passar o mouse sobre o olho, anima a pálpebra para um "meio-piscar" */
+.btn-button:hover .btn-lid , 
+.wrapper.hovered .btn-lid {
+  animation: eye-lid 150ms forwards;
+  background: #fff;
+}
+/* Animação extra só para o "hover" no botão */
+.btn-button:hover {
+  background: #000;
+  z-index: 97;
+}
+
+/* Define o quanto a pálpebra fecha no hover */
+@keyframes eye-lid {
+  from {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+  to {
+    clip-path: inset(30% 0% 30% 0%);
+  }
+}
+
+/* Quando o laser estiver ativo (via classe no body), destaque as pupilas */
+body.laser-active .left-eye .btn-pupil,
+body.laser-active .right-eye .btn-pupil {
+  z-index: 200 !important;
+  background: #ff4d4d;
+}
+
+/* Overlay para o laser */
+body.laser-active::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+/* Animação de blink (não usada, mas deixada de exemplo) */
+@keyframes laser-blink {
+  0% {
+    clip-path: inset(0 0 0 0);
+  }
+  50% {
+    clip-path: inset(100% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* "Tampa" da pálpebra, fica sobre a pupila */
+.btn-lid {
+  background: #fff;
+  border-radius: 10rem;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  background: transparent;
+}
+
+/* A pupila em si */
+.btn-pupil {
+  position: relative;
+  background: #000;
+  border: 0.8rem solid rgb(156, 207, 255);
+  border-radius: 10rem;
+  padding: 0.7rem;
+  transition: all 200ms ease-out;
+  z-index: 98;
+}
+
+
+/* Exemplo de classe adicional se precisar de algo sensorial */
+.btn-sensor {
+  clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
+  height: 130dvmax;
+  width: 130dvmax;
+  overflow: hidden;
+  position: absolute;
+  left: calc(50% - 130dvmax / 2);
+  top: calc(50% - 130dvmax / 2);
+  transform: rotate(calc(var(--a) * 1deg)) translateY(calc(130dvmax * -50 / 100));
+  pointer-events: auto;
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    top: 20%;
+  }
+}

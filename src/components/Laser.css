@@ -1,0 +1,312 @@
+
+.laser-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.laser {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 20, 20, 0.9) 0%,
+    rgba(255, 100, 50, 0.7) 30%,
+    rgba(255, 200, 100, 0.5) 70%,
+    rgba(255, 255, 150, 0.5) 100%
+  );
+  border-radius: 50% 50% 4px 4px;
+  box-shadow: 
+    0 0 15px rgba(255, 50, 50, 0.8),
+    0 0 30px rgba(255, 100, 50, 0.6),
+    0 0 45px rgba(255, 150, 50, 0.3);
+  filter: blur(0.5px);
+  transition: 
+    width 0.2s ease-out,
+    height 0s,
+    opacity 0.2s ease-out;
+}
+
+.laser[data-active="true"] {
+  width: 8px;
+  opacity: 0.95;
+}
+
+.laser[data-active="false"] {
+  width: 0;
+  opacity: 0;
+}
+
+/* Efeito de núcleo interno para realismo */
+.laser::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 100%
+  );
+  border-radius: inherit;
+}
+
+/* Efeito Elétrico */
+svg[data-active="true"] {
+  display: block;
+  filter: 
+    drop-shadow(0 0 5px rgba(255, 50, 50, 0.8))
+    drop-shadow(0 0 10px rgba(255, 100, 50, 0.6));
+  transition: height 0s;
+}
+
+svg[data-active="false"] {
+  display: none;
+  height: 0;
+}
+
+/* Burn marks - Versão Realista */
+.burn-mark {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 100, 50, 0.7) 0%,
+    rgba(255, 50, 20, 0.5) 30%,
+    rgba(50, 10, 5, 0.3) 60%,
+    transparent 80%
+  );
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: hard-light;
+  animation: burnFade 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Animação melhorada para burn marks */
+@keyframes burnFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.7) rotate(0deg);
+    filter: brightness(1.5) contrast(1.5);
+  }
+  50% {
+    opacity: 0.9;
+    filter: brightness(1.2) contrast(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.3) rotate(10deg);
+    filter: brightness(0.8) contrast(0.8);
+  }
+}
+
+/* Efeito de distorção térmica */
+.burn-mark::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: heatDistortion 1.5s ease-out forwards;
+}
+
+@keyframes heatDistortion {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Efeito de pós-processamento quando laser ativo */
+body.laser-active {
+  user-select: none;
+  background-blend-mode: overlay;
+}
+
+body.laser-active::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 100, 50, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  mix-blend-mode: color-dodge;
+  transition: transform 0.1s ease-out;
+}
+
+/* Efeito de Carregamento */
+/* Container centralizado */
+.charging-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background-color: #FF3030;
+}
+
+
+/* Aura central expandindo */
+.charging-aura {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(255, 0, 0, 0.9) 0%,
+    rgba(255, 50, 0, 0.4) 40%,
+    rgba(255, 0, 0, 0) 70%
+  );
+  animation: auraWave 2s infinite ease-out;
+}
+
+/* Raios (sparks) maiores e centralizados com forma de lightning bolt */
+.spark {
+  position: absolute;
+  width: 600px;
+  height: 15px;
+  background-color: #FF3030;
+  /* Define o formato do raio */
+  clip-path: polygon(50% 40%, 70% 35%, 45% 305%, 60% 100%, 250% 65%, 50% 65%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(var(--init-angle, 0deg));
+  opacity: 0.2;
+}
+
+/* Define ângulos iniciais para disposição circular */
+.charging-effect .spark:nth-child(2) { --init-angle: 0deg; }
+.charging-effect .spark:nth-child(3) { --init-angle: 45deg; }
+.charging-effect .spark:nth-child(4) { --init-angle: 90deg; }
+.charging-effect .spark:nth-child(5) { --init-angle: 135deg; }
+.charging-effect .spark:nth-child(6) { --init-angle: 180deg; }
+.charging-effect .spark:nth-child(7) { --init-angle: 225deg; }
+.charging-effect .spark:nth-child(8) { --init-angle: 270deg; }
+.charging-effect .spark:nth-child(9) { --init-angle: 315deg; }
+
+/* Alterna a direção da rotação: pares giram no sentido horário e ímpares no anti-horário */
+.charging-effect .spark:nth-child(2n) {
+  animation: rotateCW 1.5s linear infinite;
+}
+.charging-effect .spark:nth-child(2n+1) {
+  animation: rotateCCW 1.5s linear infinite;
+}
+
+/* Animação de rotação no sentido horário */
+@keyframes rotateCW {
+  0% {
+    transform: translate(-50%, -50%) rotate(var(--init-angle));
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(calc(var(--init-angle) + 360deg));
+  }
+}
+
+/* Animação de rotação no sentido anti-horário */
+@keyframes rotateCCW {
+  0% {
+    transform: translate(-50%, -50%) rotate(var(--init-angle));
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(calc(var(--init-angle) - 360deg));
+  }
+}
+
+/* Animação da aura */
+@keyframes auraWave {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+.explosion {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.9) 0%, rgba(255, 0, 0, 0.1) 60%, transparent 100%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+
+  pointer-events: none;
+}
+
+/* Ao ficar ativo, fazemos uma animação que expande a explosão */
+.explosion.active {
+  display: block;
+  animation: kameExpand 0.75s ease-out forwards;
+}
+
+@keyframes kameExpand {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  70% {
+    width: 100px; /* Tamanho grande para dar sensação de onda de energia */
+    height: 100px;
+    opacity: 0.8;
+  }
+  100% {
+    width: 300px; /* Pode aumentar ainda mais se quiser */
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+/* Estado de carregamento */
+body.laser-charging {
+  cursor: progress;
+}
+
+body.laser-charging * {
+  pointer-events: none !important;
+}
+
+body.laser-active button,
+body.laser-active a,
+body.laser-active input,
+body.laser-active textarea {
+  pointer-events: none;
+  filter: brightness(1) contrast(0.9);
+  transition: filter 0.3s ease;
+}

@@ -1,0 +1,374 @@
+/* =============================================================== */
+/* Portfolio.css – estilo global + responsivo                      */
+/* =============================================================== */
+
+/* ------------ Cores utilitárias ------------ */
+:root {
+  --c-bg-light: #efe7d8;
+  --c-bg-dark:  #111827;
+  --c-text-light: #111827;
+  --c-text-dark:  #efe7d8;
+  --c-primary:    #3b82f6;
+}
+
+/* ------------ Base ------------ */
+body {
+  background: var(--c-bg-light);
+  color: var(--c-text-light);
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0;
+}
+.dark body {
+  background: var(--c-bg-dark);
+  color: var(--c-text-dark);
+}
+
+/* ------------ Container raiz ------------ */
+.portfolio-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============================================================== */
+/* NAVBAR                                                          */
+/* =============================================================== */
+
+.portfolio-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.dark .portfolio-nav { 
+  background: rgba(17,24,39,0.7); 
+}
+
+.portfolio-nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(0.5rem, 2vw, 1rem) clamp(10rem, 4vw, 2rem);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .portfolio-nav-inner {
+    gap: 3rem;
+  }
+}
+
+/* ---- Links (desktop: 1 linha, centralizados) ---- */
+.portfolio-nav-links {
+  flex: 1;                         
+  display: flex;
+  justify-content: center;         
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* ---- Layout mobile “3 + 2” ---- */
+@media (max-width: 768px) {
+  .portfolio-nav-links {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 0.75rem;
+    row-gap: 0.5rem;
+    margin-left: -4rem;
+  }
+  .portfolio-nav-links .portfolio-nav-link:nth-child(4) { 
+    grid-column: 2; 
+    margin-left: -4rem;
+  }
+
+  .portfolio-nav-links .portfolio-nav-link:nth-child(5) { 
+    grid-column: 3; 
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .portfolio-nav-links { 
+    column-gap: 0.75rem; 
+    row-gap: 0.5rem; 
+  }
+}
+@media (max-width: 360px) {
+  .portfolio-nav-links { 
+    column-gap: 0.5rem;  
+    row-gap: 0.4rem; 
+  }
+}
+
+/* ---- Estética dos links ---- */
+.portfolio-nav-link {
+  position: relative;
+  text-decoration: none;
+  font-weight: 500;
+  color: #000000;
+  font-size: clamp(0.85rem, 3vw, 1rem);
+}
+.dark .portfolio-nav-link { 
+  color: #d1d5db; 
+}
+
+.portfolio-nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: var(--c-primary);
+  transition: width 0.3s ease;
+}
+.portfolio-nav-link:hover::after { 
+  width: 100%; 
+}
+
+.portfolio-nav-link:hover { 
+  color: var(--c-primary); 
+}
+
+/* ---- Botão de tema ---- */
+.portfolio-toggle-button {
+  padding: 1rem;
+  border-radius: 5rem;
+  background: #5a78b5;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.portfolio-toggle-button:hover { 
+  background: #2c4476; 
+  transform: scale(1.05); 
+}
+
+.dark .portfolio-toggle-button       { 
+  background: #cfcfcf; 
+}
+
+.dark .portfolio-toggle-button:hover { 
+  background: #606060; 
+}
+
+/* =============================================================== */
+/* ABOUT (mantido)                                                 */
+/* =============================================================== */
+
+.portfolio-about-section {
+  background: #c2d3da;
+  padding: clamp(2rem, 5vw, 2rem) 1rem 3rem;
+}
+.dark .portfolio-about-section { 
+  background: var(--c-bg-dark); 
+}
+
+.portfolio-about-container { 
+  max-width: 1280px; 
+  margin: 0 auto; 
+}
+
+.portfolio-about-content   {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1200px) {
+  .portfolio-about-content { 
+    flex-direction: row; 
+    align-items: center; 
+    
+  }
+}
+@media(min-width: 1024px){
+  .portfolio-about-image {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: float 3s ease-in-out infinite;
+    align-self: center;
+    box-shadow: 0 0 16px rgba(0,0,0,0.5);
+  }
+  .portfolio-about-text { 
+    max-width: 40rem; 
+    margin: 0 70px; 
+    text-align: left;  
+    align-self: center;
+  }
+}
+
+@media(min-width: 1440px){
+  .portfolio-about-image {
+    align-items: center;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: float 3s ease-in-out infinite;
+    margin-left: 12rem;
+    box-shadow: 0 0 16px rgba(0,0,0,0.5);
+  }
+}
+
+.flip-card-inner { 
+  position: relative; 
+  width: 100%; 
+  height: 100%; 
+  transition: transform 0.6s; 
+  transform-style: preserve-3d; 
+}
+
+.portfolio-about-image:hover .flip-card-inner { 
+  transform: rotateY(180deg); 
+}
+
+.flip-card-front, .flip-card-back { 
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  backface-visibility: hidden; 
+  object-fit: cover; 
+}
+.flip-card-front img,
+.flip-card-back img {
+  display: block;      
+  width: 100%;          
+  height: 100%;        
+  object-fit: cover;   
+  border-radius: 50%;   
+}
+
+.flip-card-back { 
+  transform: rotateY(180deg); 
+}
+
+.portfolio-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.portfolio-social-link {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+.portfolio-social-link.linkedin {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.portfolio-social-link.linkedin:hover {
+  background-color: #2563eb;
+}
+
+.portfolio-social-link.github {
+  background-color: #1f2937;
+  color: white;
+}
+
+.portfolio-social-link.github:hover {
+  background-color: #111827;
+}
+
+.dark .portfolio-social-link.github {
+  background-color: #374151;
+}
+
+.dark .portfolio-social-link.github:hover {
+  background-color: #1f2937;
+}
+
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.portfolio-about-text { 
+  max-width: 40rem; 
+  margin: 0 70px; 
+  text-align: left;  
+ padding-left: 0%;
+}
+
+/* ---------- Responsivo extra para ABOUT ---------- */
+@media (min-width: 767px){
+  .portfolio-about-image {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: float 3s ease-in-out infinite;
+    align-self: center;
+    box-shadow: 0 0 16px rgba(0,0,0,0.5);
+  }
+
+}
+@media (max-width: 768px) {
+  .portfolio-about-section { 
+    padding: 3rem 0.75rem 3rem; 
+  }
+  .portfolio-about-content { 
+    gap: -1rem; 
+  }
+  .portfolio-about-image {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: float 3s ease-in-out infinite;
+    align-self: center;
+    box-shadow: 0 0 16px rgba(0,0,0,0.5);
+  }
+}
+@media (max-width: 480px) {
+  .portfolio-about-container {
+    max-width: 340px;
+    width: 90%;
+    margin-inline: auto;
+    background: rgba(255,255,255,0.04);
+    border-radius: 0.75rem;
+    box-shadow: 0 0 16px rgba(0,0,0,0.25);
+    padding: 2rem 1rem 2.5rem;
+  }
+  .portfolio-about-title       { 
+    font-size: 1.5rem; 
+  }
+  .portfolio-about-description { 
+    font-size: 0.95rem; 
+  }
+  .portfolio-about-image       { 
+    width: 9rem; 
+    height: 9rem; 
+  }
+
+}
+@media (max-width: 360px) {
+  .portfolio-about-image  { 
+    width: 7.5rem; 
+    height: 7.5rem; 
+  }
+  .portfolio-about-title  { 
+    font-size: 1.35rem; 
+  }
+  .portfolio-about-description { 
+    font-size: 0.85rem; 
+  }
+  .portfolio-about-text{
+    margin:  0 0;
+    text-align: center;
+    
+  }
+  .portfolio-social-link.portfolio-social-link.linkedin{
+    margin-left: 80px;
+  }
+}
+/* =========================== FIM DO CSS ========================= */

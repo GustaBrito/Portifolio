@@ -1,0 +1,162 @@
+/* =============================================================== */
+/* PROJECTS – estilo base                                          */
+/* =============================================================== */
+
+.projects-section {
+  background: #585a56;
+  padding: clamp(3rem, 8vw, 4rem) 1rem;
+}
+.projects-section.dark { background: var(--c-bg-dark); }
+
+.projects-container   { max-width: 1280px; margin: 0 auto; }
+
+.projects-title {
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--c-text-light);
+}
+.projects-section.dark .projects-title { color: var(--c-text-dark); }
+
+/* ---------------- Grid de cards --------------------------------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 640px)  { 
+  .projects-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  } 
+}
+@media (min-width: 1024px) {
+   .projects-grid { 
+    grid-template-columns: repeat(3, 1fr); 
+  } 
+}
+@media (min-width: 1440px) {
+   .projects-grid { 
+    grid-template-columns: repeat(3, 1fr); 
+  } 
+}
+
+/* ---------------- Card ------------------------------------------ */
+.project-card {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+
+  /* ajustes para expansão suave */
+  position: relative;          /* necessário para z-index funcionar */
+  z-index: 1;
+  transform-origin: center;    /* expandir a partir do centro */
+  transition: transform .3s ease, box-shadow .3s ease, z-index .3s ease;
+
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.5rem;
+}
+.project-card:hover,
+.project-card:focus-visible {            
+  transform: translateY(-4px) scale(1.06) !important;   
+  box-shadow: 0 12px 28px rgba(59,130,246,.4),
+              0 0 16px rgba(59,130,246,.25);
+  z-index: 10;                              
+}
+.projects-section.dark .project-card { background: #1f2937; }
+
+/* imagem */
+.project-image {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* conteúdo */
+.project-content   { padding: 0.1rem; text-align: center; display: flex; flex-direction: column; gap: 1rem; flex: 1; }
+.project-title      { font-weight: 600; font-size: 1.1rem; }
+.project-description{ color: #4b5563; font-size: 0.95rem; }
+.projects-section.dark .project-description { color: #d1d5db; }
+
+/* links */
+.project-links     { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.project-link      { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 500; transition: color 0.2s ease; }
+.project-link-demo { color: var(--c-primary); }
+.project-link-demo:hover { color: #2563eb; }
+.project-link-code { color: #4b5563; }
+.projects-section.dark .project-link-code { color: #d1d5db; }
+.projects-section.dark .project-link-code:hover { color: #fff; }
+
+/* badges */
+.project-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; margin-top: auto; }
+.badge-image    { height: 24px; width: auto; }
+
+/* motion safe */
+@media (prefers-reduced-motion: reduce) {
+  .project-card { transition: none !important; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* =============================================================== */
+/* RESPONSIVE OVERRIDES                                            */
+/* =============================================================== */
+
+/* ---------- tablets e celulares grandes (≤ 768 px) -------------- */
+@media (max-width: 768px) {
+
+  /* Padding da seção menor */
+  .projects-section { padding: 2.5rem 0.75rem; }
+
+  /* Título e grid mais compactos */
+  .projects-title { font-size: 1.5rem; margin-bottom: 2rem; }
+  .projects-grid  { gap: 1.75rem; }
+}
+
+/* ---------- celulares (≤ 480 px) -------------------------------- */
+@media (max-width: 480px) {
+
+  /* 1️⃣  “Cartão” para a lista inteira, centralizado */
+  .projects-container {
+    max-width: 340px;
+    width: 92%;
+    margin-inline: auto;
+    background: rgba(255,255,255,0.05);
+    border-radius: 0.75rem;
+    box-shadow: 0 0 16px rgba(0,0,0,0.25);
+    padding: 2rem 1rem 2.5rem;
+  }
+
+  /* 2️⃣  Grid de 1 coluna com gaps menores */
+  .projects-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  /* 3️⃣  Imagem e conteúdo reduzidos */
+  .project-image       { height: 9rem;   object-fit: cover;}
+  .project-content     { padding: 1rem; gap: 0.85rem; }
+  .project-title       { font-size: 1rem; }
+  .project-description { font-size: 0.9rem; }
+
+  /* 4️⃣  Links e badges mais próximos */
+  .project-links  { gap: 0.75rem; }
+  .project-badges { gap: 0.3rem; }
+}
+
+/* ---------- celulares muito pequenos (≤ 360 px) ----------------- */
+@media (max-width: 360px) {
+
+  /* Título e texto ainda menores */
+  .projects-title       { font-size: 1.35rem; }
+  .project-title        { font-size: 0.95rem; }
+  .project-description  { font-size: 0.85rem; }
+
+  /* Reduz altura da imagem */
+  .project-image { height: 7.5rem; }
+
+  /* Gaps mínimos */
+  .projects-grid  { gap: 1.25rem; }
+  .project-content{ gap: 0.75rem; }
+}
+/* =============================== FIM DO CSS ====================== */

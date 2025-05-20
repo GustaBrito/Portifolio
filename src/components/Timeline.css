@@ -1,0 +1,317 @@
+/* =============================================================== */
+/* TIMELINE – estilo base + responsivo                             */
+/* =============================================================== */
+
+/* --- Container geral --- */
+.timeline-section {
+  background: #81a3a7;
+  padding: clamp(0rem, 8vw, 4rem) 10rem;
+}
+.timeline-section.dark {
+  background: #1f2937;
+}
+
+/* --- Wrapper --- */
+.timeline-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.timeline-title {
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--c-text-light);
+}
+.timeline-section.dark .timeline-title {
+  color: var(--c-text-dark);
+}
+
+/* --- Grid wrapper (mobile-first: 1 coluna) --- */
+.timeline-grid-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.timeline-line {
+  display: none;
+}
+
+/* =============================================================== */
+/* desktop (a partir de 1024px): linha central + 2 colunas        */
+/* =============================================================== */
+@media (min-width: 1024px) {
+  .timeline-grid-wrapper {
+    /* largura → coluna | linha fina | coluna  */
+    grid-template-columns: 1fr 4px 1fr;
+  }
+
+  /* linha central */
+  .timeline-line {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #d1d5db;
+    transform: translateX(-50%);
+    z-index: 1;                 /* fica sobreposta aos cards  */
+  }
+  .timeline-section.dark .timeline-line { 
+    background: #4b5563; 
+  }
+  .timeline-grid-wrapper .timeline-item:nth-child(odd) {
+    grid-column: 1 / 3;         /* ocupa col-esq + linha */
+    align-items: flex-end;
+  }
+
+  /* PAR = lado direito → atravessa a linha     */
+  .timeline-grid-wrapper .timeline-item:nth-child(even) {
+    grid-column: 2 / 4;         /* ocupa linha + col-dir */
+    align-items: flex-start;
+  }
+
+  /* --------- pino (botão redondo) --------- */
+  .timeline-grid-wrapper .timeline-item:nth-child(odd)  .timeline-button {
+    right: -0.75rem;            /* cola no centro */
+    transform: translateX(380%) translateY(-120%);
+    z-index: 3;
+  }
+  .timeline-grid-wrapper .timeline-item:nth-child(even) .timeline-button {
+    left: -0.75rem;
+    transform: translateX(-380%) translateY(-120%);
+    z-index: 3;
+  }
+
+
+  .timeline-grid-wrapper .timeline-item:nth-child(odd)  .timeline-item-content {
+    transform: translateX(6rem);
+    z-index: 2;
+  }
+
+  /* PAR   = lado direito → avança 1.5 rem p/ a esquerda */
+  .timeline-grid-wrapper .timeline-item:nth-child(even) .timeline-item-content {
+    transform: translateX(-6rem);
+    z-index: 2;
+  }
+
+}
+
+/* --- Item base --- */
+.timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* --- Botão indicador --- */
+.timeline-button {
+  position: absolute;     /* NOVO  */
+  top: 1.25rem;           /* NOVO  */
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #d1d5db;
+  border: none;
+  transition: transform .2s, background .3s;
+  /* retire o transform padrão ou deixe apenas: */
+  transform: translateX(-40%) translateY(-110%);
+}
+.timeline-button.selected {
+  background: var(--c-primary);
+  box-shadow: 0 0 0 4px rgba(59,130,246,0.4);
+}
+.timeline-button:hover {
+  background: var(--c-primary);
+}
+.timeline-section.dark .timeline-button {
+  background: #4b5563;
+}
+.timeline-section.dark .timeline-button:hover {
+  background: #60a5fa;
+}
+
+/* --- Card de conteúdo --- */
+.timeline-item-content {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  width: 100%;
+}
+.timeline-section.dark .timeline-item-content {
+  background: #374151;
+}
+
+.timeline-item-date {
+  font-size: 0.85rem;
+  color: var(--c-primary);
+}
+.timeline-section.dark .timeline-item-date {
+  color: #60a5fa;
+}
+
+.timeline-item-title {
+  font-weight: 600;
+  margin-top: 0.4rem;
+  font-size: 1.1rem;
+}
+
+.timeline-item-description {
+  margin-top: 0.8rem;
+  color: #4b5563;
+}
+.timeline-section.dark .timeline-item-description {
+  color: #d1d5db;
+}
+
+/* --- prefers-reduced-motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .timeline-button {
+    transition: none !important;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* =============================================================== */
+/* RESPONSIVE OVERRIDES                                            */
+/* =============================================================== */
+
+/* tablets e celulares grandes (≤ 768px) */
+@media (max-width: 768px) {
+  .timeline-section {
+    padding: 2rem 0.55rem;
+  }
+  .timeline-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline-item-content {
+    padding: 1rem;
+  }
+  .timeline-button{
+    transform: translateX(-40%) translateY(-110%);
+  }
+  .timeline-container {
+    width: 92%;
+    margin-inline: auto;
+    background: rgba(255,255,255,0.05);
+    border-radius: 0.75rem;
+    box-shadow: 0 0 16px rgba(0,0,0,0.25);
+    padding: 1.5rem 1rem;
+    overflow: hidden;
+  }
+  .timeline-grid-wrapper {
+    gap: 1.5rem;
+    width: 100%;
+  }
+  .timeline-item-content {
+    width: 100%;
+    padding: 0.5rem; 
+    box-sizing: border-box; 
+  }
+  .timeline-item-title,
+  .timeline-item-date,
+  .timeline-item-description {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem; /* Adicionei padding direito */
+    margin-right: 0; /* Removi a margem direita */
+    word-break: break-word; /* Quebra palavras longas */
+    overflow-wrap: anywhere; /* Permite quebra em qualquer ponto */
+  }
+
+  .timeline-item-description {
+    font-size: 0.85rem; /* Texto um pouco menor */
+    line-height: 1.4; /* Melhor espaçamento */
+    margin-top: 0.5rem; /* Espaço reduzido */
+  }
+
+  .timeline-button {
+    width: 1.2rem;
+    height: 1.2rem;
+    transform: translateX(-40%) translateY(-140%); /* Ajuste fino na posição */
+  }
+
+}
+
+/* celulares (≤ 480px) */
+@media (max-width: 480px) {
+  .timeline-container {
+    max-width: 340px;
+    width: 92%;
+    margin-inline: auto;
+    background: rgba(255,255,255,0.05);
+    border-radius: 0.75rem;
+    box-shadow: 0 0 16px rgba(0,0,0,0.25);
+    padding: 1.5rem 1rem;
+    overflow: hidden;
+  }
+  .timeline-grid-wrapper {
+    gap: 1.5rem;
+    width: 100%;
+  }
+  .timeline-item-content {
+    width: 100%;
+    padding: 0.5rem; 
+    box-sizing: border-box; 
+  }
+  .timeline-item-title,
+  .timeline-item-date,
+  .timeline-item-description {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem; /* Adicionei padding direito */
+    margin-right: 0; /* Removi a margem direita */
+    word-break: break-word; /* Quebra palavras longas */
+    overflow-wrap: anywhere; /* Permite quebra em qualquer ponto */
+  }
+
+  .timeline-item-description {
+    font-size: 0.85rem; /* Texto um pouco menor */
+    line-height: 1.4; /* Melhor espaçamento */
+    margin-top: 0.5rem; /* Espaço reduzido */
+  }
+
+  .timeline-button {
+    width: 1.2rem;
+    height: 1.2rem;
+    transform: translateX(-40%) translateY(-140%); /* Ajuste fino na posição */
+  }
+
+}
+
+/* celulares muito pequenos (≤ 360px) */
+@media (max-width: 360px) {
+  .timeline-title {
+    font-size: 1.35rem;
+  }
+  .timeline-item-title {
+    font-size: 0.95rem;
+  }
+  .timeline-item-date {
+    font-size: 0.75rem;
+  }
+  .timeline-item-description {
+    font-size: 0.85rem;
+  }
+  .timeline-grid-wrapper {
+    gap: 1.25rem;
+  }
+  .timeline-button {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+}
+/* =============================== FIM DO CSS ====================== */

@@ -1,0 +1,116 @@
+/* LanguageSelector.css */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8));
+  font-family: 'JetBrains Mono', monospace;
+  user-select: none;
+}
+
+.language-selector-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.7), #374151);
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+/* BASE (MOBILE-FIRST) */
+.language-selector-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem 1rem;
+  padding-top: 9rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  z-index: 10;
+}
+
+.language-selector-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.language-selector-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.language-selector-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.language-selector-button {
+  cursor: pointer;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.language-selector-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.language-selector-button.secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.language-selector-button.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* TABLET & UP */
+@media (min-width: 640px) {
+  .language-selector-card {
+    padding: 2rem;
+    padding-top: 9rem;
+    max-width: 600px;
+  }
+  .language-selector-title {
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+  }
+  .language-selector-subtitle {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+  .language-selector-buttons {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .language-selector-button {
+    width: auto;
+  }
+}
+
+/* DESKTOP & UP */
+@media (min-width: 1024px) {
+  .language-selector-card {
+    padding-top: 10rem;
+  }
+}

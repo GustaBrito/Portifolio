@@ -1,0 +1,290 @@
+/* =================================================================== */
+/* 1. Variáveis de cor (facilita trocar temas no futuro)               */
+/* =================================================================== */
+:root {
+  --clr-bg-light: #f1f3f2;
+  --clr-bg-dark:  #1f2937;
+  --clr-text-light: #111827;
+  --clr-text-dark:  #f9fafb;
+  --clr-primary:    #3b82f6;
+  --clr-primary-dk: #1d4ed8;
+}
+
+/* =================================================================== */
+/* 2. Estrutura geral                                                  */
+/* =================================================================== */
+.contact-section {
+  padding: 2rem 1rem;
+  background: var(--clr-bg-light);
+}
+
+.contact-section.dark { background: var(--clr-bg-dark); }
+
+.contact-container {
+  width: 100%;
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+/* ------------------------------------------------------------------- */
+/* 2.1 Título                                                          */
+/* ------------------------------------------------------------------- */
+.contact-title {
+  font-size: clamp(1.75rem, 5vw, 1.875rem);
+  line-height: 1.3;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--clr-text-light);
+}
+
+.contact-section.dark .contact-title { color: var(--clr-text-dark); }
+
+/* ------------------------------------------------------------------- */
+/* 2.2 Formulário e inputs                                             */
+/* ------------------------------------------------------------------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.contact-label {
+  font-size: .9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.contact-section.dark .contact-label { color: var(--clr-text-dark); }
+
+.contact-input {
+  width: 100%;
+  font-size: .95rem;
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: var(--clr-text-light);
+  box-sizing: border-box;
+  resize: vertical;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 3px rgba(59,130,246,.2);
+}
+
+.contact-section.dark .contact-input {
+  border-color: #4b5563;
+  background: #374151;
+  color: var(--clr-text-dark);
+}
+
+/* sombras individuais (mantive caso queira retirar depois) */
+#name, #email, #message {
+  box-shadow: rgba(67,102,255,.5) 0 5px 15px;
+}
+
+/* ------------------------------------------------------------------- */
+/* 2.3 Botões                                                          */
+/* ------------------------------------------------------------------- */
+.contact-button-group {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.contact-button {
+  flex: 1;
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  font-weight: 500;
+  background: var(--clr-primary);
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  transition: background-color .2s ease, box-shadow .2s ease;
+}
+
+.contact-button:hover {
+  background: #2563eb;
+  box-shadow: 0 4px 14px rgba(37,99,235,.3);
+}
+
+.contact-section.dark .contact-button {
+  background: var(--clr-primary-dk);
+}
+
+.contact-section.dark .contact-button:hover {
+  background: #1e40af;
+  box-shadow: 0 4px 14px rgba(30,64,175,.3);
+}
+
+/* ------------------------------------------------------------------- */
+/* 2.4 Ícones sociais                                                  */
+/* ------------------------------------------------------------------- */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: .5rem;
+  flex-wrap: wrap;                 /* evita overflow em telas estreitas */
+}
+
+.contact-icon {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: .5rem;
+  border-radius: 50%;
+  transition: box-shadow .3s ease;
+}
+
+.contact-icon img {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  z-index: 10;
+}
+
+@keyframes pulse { 
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+ }
+/* pulse light */
+.contact-icon.active::before { 
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65px;
+  height: 65px;
+  background:rgb(120, 120, 120);
+  border-radius: 50%;
+  filter: blur(8px);
+  z-index: 0;
+  animation: pulse 2s infinite;
+  will-change: transform, opacity;
+}
+/* pulse dark */
+.dark .contact-icon.active::before { 
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65px;
+  height: 65px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  filter: blur(8px);
+  z-index: 0;
+  animation: pulse 2s infinite;
+  will-change: transform, opacity;
+}
+
+/* textarea maior específico */
+.linkedin-message { min-height: 200px; }
+
+/* =================================================================== */
+/* 3. Media queries                                                    */
+/* =================================================================== */
+
+/* -------- até 768 px (tablets / celulares maiores) ------------------ */
+@media (max-width: 768px) {
+  .contact-section { padding: 1.75rem .75rem; }
+  .contact-form   { gap: 1.25rem; }
+  .contact-group  { gap: .75rem;  }
+  .contact-icons  { gap: 1.5rem; }
+}
+
+/* =============================================================== */
+/* CONTACT OVERRIDES – ajustes finos p/ telas ≤ 480 px             */
+/* =============================================================== */
+@media (max-width: 480px) {
+  /* 1️⃣  Centraliza toda a seção no viewport                       */
+  .contact-section {
+    display: flex;                /* vira flex-container  */
+    justify-content: center;      /* centraliza horiz.    */
+  }
+
+  /* 2️⃣  “Cartão” interno menor e com bordas arredondadas          */
+  .contact-container {
+    max-width: 320px;             /* limite estreito      */
+    width: 90%;                   /* 90 % do visor        */
+    padding: 1rem .75rem 1.25rem; /* respiro interno      */
+    background: rgba(255,255,255,.03); /* leve contraste   */
+    border-radius: .75rem;
+    box-shadow: 0 0 12px rgba(0,0,0,.25);
+  }
+
+  /* 3️⃣  Título um pouco menor                                     */
+  .contact-title {
+    font-size: 1.35rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* 4️⃣  Ícones menores e mais próximos                            */
+  .contact-icons {
+    gap: .75rem;
+    margin-bottom: 1.25rem;
+    z-index: 1;
+  }
+  .contact-icon img {
+    position: relative;
+    width: 42px;
+    height: 42px;
+  }
+
+  /* 5️⃣  Campos mais delicados (altura e fonte)                    */
+  .contact-label   { font-size: .8rem; }
+  .contact-input   {
+    font-size: .85rem;
+    padding: .55rem .75rem;
+  }
+  .linkedin-message { min-height: 110px; }
+
+  /* 6️⃣  Botões compactos e lado a lado                            */
+  .contact-button  {
+    padding: .6rem .75rem;
+    font-size: .85rem;
+  }
+}
+
+/* =============================================================== */
+/* CONTACT OVERRIDES – telas muito pequenas (≤ 360 px)             */
+/* =============================================================== */
+@media (max-width: 360px) {
+  /* quebra botões em duas linhas                                   */
+  .contact-button-group { flex-direction: column; gap: .6rem; }
+
+  /* ajuste de ícone                                                */
+  .contact-icon img { width: 38px; height: 38px; }
+
+  /* texto menor                                                    */
+  .contact-label  { font-size: .75rem; }
+  .contact-input  { font-size: .8rem; }
+}
+/* ============================= END CONTACT OVERRIDES ============ */
