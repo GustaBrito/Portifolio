@@ -239,13 +239,13 @@ const LaserEffect: React.FC = () => {
     };
 
     // Registra os event listeners
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mouseup',   handleMouseUp);
+    // document.addEventListener('mousemove', handleMouseMove);
+    // document.addEventListener('mousedown', handleMouseDown);
+    // document.addEventListener('mouseup',   handleMouseUp);
 
-    document.addEventListener('touchmove',  handleTouchMove,  { passive: false });
-    document.addEventListener('touchstart', handleTouchStart, { passive: true });
-    document.addEventListener('touchend',   handleMouseUp);
+    // document.addEventListener('touchmove',  handleTouchMove,  { passive: false });
+    // document.addEventListener('touchstart', handleTouchStart, { passive: true });
+    // document.addEventListener('touchend',   handleMouseUp);
 
     return () => {
       clearTimeout(initTimeout);

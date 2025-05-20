@@ -29,11 +29,19 @@ const MouseTracker: React.FC = () => {
       if (touch) move(touch.clientX, touch.clientY);
     };
 
+    const handleTouchStart = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      if (touch) move(touch.clientX, touch.clientY);
+    };
+
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('touchmove', handleTouchMove);
+    window.addEventListener('touchstart', handleTouchStart); 
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchstart', handleTouchStart);
     };
   }, []);
 
