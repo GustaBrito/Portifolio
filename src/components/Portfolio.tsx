@@ -113,7 +113,7 @@ const Portfolio: React.FC = () => {
                   <Linkedin className="w-6 h-6" />
                 </a>
                 <a
-                  href="https://github.com/"
+                  href="https://github.com/GustaBrito"
                   target="_blank"
                   rel="noopener"
                   aria-label="GitHub"
