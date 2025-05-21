@@ -41,13 +41,13 @@ const Portfolio: React.FC = () => {
           {/* links (sempre visíveis) */}
           <nav className="portfolio-nav-links">
             {navKeys.map((key: NavKey) => (
-              <a
-                key={key}
-                href={key === 'return' ? '/' : `#${key}`}
-                className="portfolio-nav-link"
-              >
-                {t(`nav.${key}` as `nav.return`)}
-              </a>
+                  <a
+                  key={key}
+                  href={key === 'return' ? 'https://gustabrito.github.io/Portifolio/' : `#${key}`}
+                  className="portfolio-nav-link"
+                >
+                  {t(`nav.${key}` as `nav.return`)}
+                </a>
             ))}
           </nav>
 
