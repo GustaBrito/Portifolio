@@ -50,16 +50,16 @@ body {
 .portfolio-nav-inner {
   max-width: 1280px;
   margin: 0 auto;
-  padding: clamp(0.5rem, 2vw, 1rem) clamp(10rem, 4vw, 2rem);
+  padding: clamp(0.5rem, 2vw, 1rem) clamp(8rem, 4vw, 2rem);
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .portfolio-nav-inner {
     gap: 3rem;
   }
-}
+} */
 
 /* ---- Links (desktop: 1 linha, centralizados) ---- */
 .portfolio-nav-links {
@@ -328,6 +328,9 @@ body {
     align-self: center;
     box-shadow: 0 0 16px rgba(0,0,0,0.5);
   }
+  .portfolio-about-text{
+    margin: 0 10 ;
+  }
 }
 @media (max-width: 480px) {
   .portfolio-about-container {
@@ -349,7 +352,13 @@ body {
     width: 9rem; 
     height: 9rem; 
   }
-
+ .portfolio-about-text{
+  margin: 0 0;
+  text-align: center;
+ }
+ .portfolio-social-link.portfolio-social-link.linkedin{
+  margin-left: 110px;
+}
 }
 @media (max-width: 360px) {
   .portfolio-about-image  { 
@@ -365,7 +374,6 @@ body {
   .portfolio-about-text{
     margin:  0 0;
     text-align: center;
-    
   }
   .portfolio-social-link.portfolio-social-link.linkedin{
     margin-left: 80px;
