@@ -14,7 +14,7 @@ export default {
     selectLanguage: 'Select your language',
   },
   nav: {
-    return: 'Go back',
+    return: 'Back',
     about: 'About',
     timeline: 'Timeline',
     projects: 'Projects',
@@ -26,7 +26,7 @@ export default {
   },
   projects: {
     title: 'My Projects',
-    viewDemo: 'View Demo',
+    viewDemo: 'App',
     viewCode: 'View Code',
   },
   contact: {
@@ -82,8 +82,8 @@ export default {
       id: 1,
       title: 'HacknSlash - Secret Wave',
       description: 'College project for Uninter to create a game in Python',
-      deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      deployUrl: 'https://github.com/GustaBrito/HacknSlash-Python/releases/tag/v1.0',
+      githubUrl: 'https://github.com/GustaBrito/HacknSlash-Python',
       image: SecretWave,
       badges: [
         'https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=ffdd54',
@@ -95,7 +95,7 @@ export default {
       id: 2,
       title: 'Personal Portfolio',
       description: 'Portfolio built with React, with parts in JavaScript, TypeScript and CSS. The goal is to showcase features and introduce myself with my first portfolio.',
-      githubUrl: 'https://github.com',
+      githubUrl: 'https://github.com/GustaBrito/Portifolio',
       image: ProjetoPortifolio,
       badges: [
         'https://img.shields.io/badge/Vscode-007ACC?style=flat&logo=visual-studio-code&logoColor=white',
@@ -109,8 +109,8 @@ export default {
       id: 3,
       title: 'Sale-Reversal',
       description: 'Desktop application developed in C# .NET 8.0. Basic application to demonstrate CRUD operations, file import/export and database usage (formerly Oracle, but adapted to SQLite)',
-      // deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      deployUrl: 'https://github.com/GustaBrito/PrjVendaEstorno/releases/tag/v1.0',
+      githubUrl: 'https://github.com/GustaBrito/PrjVendaEstorno',
       image: VendaEstorno,
       badges: [
         'https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white',
@@ -124,8 +124,8 @@ export default {
       id: 4,
       title: 'Weather Forecast',
       description: 'Desktop application developed in C# .NET 5.0. The goal was to show API usage for project development. The application currently only retrieves data for Brazil.',
-      // deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      deployUrl: 'https://github.com/GustaBrito/PrjPrevisaoTempo/releases/tag/v1.0',
+      githubUrl: 'https://github.com/GustaBrito/PrjPrevisaoTempo',
       image: PrevisaoTempo,
       badges: [
         'https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white',
@@ -138,8 +138,8 @@ export default {
       id: 5,
       title: 'Currency Converter',
       description: 'Desktop application developed in C# .NET 5.0. The goal was to show API usage for project development. The application aims to convert most currencies between each other in real time.',
-      // deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      deployUrl: 'https://github.com/GustaBrito/PrjConversorMoeda/releases/tag/v1.0',
+      githubUrl: 'https://github.com/GustaBrito/PrjConversorMoeda',
       image: ConversorMoeda,
       badges: [
         'https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white',
@@ -152,8 +152,8 @@ export default {
       id: 6,
       title: 'Password Generator',
       description: 'Desktop application developed in C# .NET 5.0. The application uses a structure to generate passwords as you define how you want them.',
-      // deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      deployUrl: 'https://github.com/GustaBrito/PrjGeradorSenha/releases/tag/v1.0',
+      githubUrl: 'https://github.com/GustaBrito/PrjGeradorSenha',
       image: GeradorSenha,
       badges: [
         'https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white',
@@ -165,8 +165,8 @@ export default {
       id: 7,
       title: 'Tic-Tac-Toe',
       description: 'Desktop application developed in C# .NET 5.0. Very simple application, with turn system and scoring to emulate a tic-tac-toe game.',
-      // deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      deployUrl: 'https://github.com/GustaBrito/PrjJogoDaVelha/releases/tag/v1.0',
+      githubUrl: 'https://github.com/GustaBrito/PrjJogoDaVelha',
       image: JogoDaVelha,
       badges: [
         'https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white',
@@ -178,8 +178,8 @@ export default {
       id: 8,
       title: 'Simple Calculator',
       description: 'Desktop application developed in C# .NET 5.0. The essential project - a simple calculator with keyboard shortcut system, button functionality, like a calculator in its simplest version.',
-      // deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      deployUrl: 'https://github.com/GustaBrito/CalculadoraSimples/releases/tag/v1.0',
+      githubUrl: 'https://github.com/GustaBrito/CalculadoraSimples',
       image: CalculadoraSimples,
       badges: [
         'https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white',
@@ -191,8 +191,8 @@ export default {
       id: 9,
       title: 'Em construção',
       description: '',
-      deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      // deployUrl: 'https://example.com',
+      // githubUrl: 'https://github.com',
       image: Desenvolvimento,
 
     }

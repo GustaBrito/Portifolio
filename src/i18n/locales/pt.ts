@@ -26,7 +26,7 @@ export default {
   },
   projects: {
     title: 'Meus Projetos',
-    viewDemo: 'Ver Demo',
+    viewDemo: 'Aplicativo',
     viewCode: 'Ver Código',
   },
   contact: {
@@ -82,8 +82,8 @@ export default {
       id: 1,
       title: 'HacknSlash - Secret Wave',
       description: 'Trabalho da faculdade Uninter para a criação de um jogo em Python',
-      deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      deployUrl: 'https://github.com/GustaBrito/HacknSlash-Python/releases/tag/v1.0',
+      githubUrl: 'https://github.com/GustaBrito/HacknSlash-Python',
       image: SecretWave,
       badges: [
         'https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=ffdd54',
@@ -95,7 +95,7 @@ export default {
       id: 2,
       title: 'Portifolio pessoal',
       description: 'Portifolio construido em React, partes em Javascript, TypeScript e CSS. O objetivo é mostrar funcionalidades e me apresentar com meu primeiro portifolio.',
-      githubUrl: 'https://github.com',
+      githubUrl: 'https://github.com/GustaBrito/Portifolio',
       image: ProjetoPortifolio,
       badges: [
         'https://img.shields.io/badge/Vscode-007ACC?style=flat&logo=visual-studio-code&logoColor=white',
@@ -109,8 +109,8 @@ export default {
       id: 3,
       title: 'Venda-Estorno',
       description: 'Aplicativo Desktop desenvolvido em C# .NET 8.0. Aplicativo basico para demonstrar aplicações CRUD, importação/exportação de arquivos e uso de banco de dados (Antes Oracle, mas adaptado para SQLite)',
-      // deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      deployUrl: 'https://github.com/GustaBrito/PrjVendaEstorno/releases/tag/v1.0',
+      githubUrl: 'https://github.com/GustaBrito/PrjVendaEstorno',
       image: VendaEstorno,
       badges: [
         'https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white',
@@ -124,8 +124,8 @@ export default {
       id: 4,
       title: 'Previsão do Tempo',
       description: 'Aplicativo Desktop desenvolvido em C# .NET 5.0. O objetivo seria mostrar o uso de APIs para desenvolvimento do Projeto. O aplicativo, no momento, apenas obtem os dados do Brasil.',
-      // deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      deployUrl: 'https://github.com/GustaBrito/PrjPrevisaoTempo/releases/tag/v1.0',
+      githubUrl: 'https://github.com/GustaBrito/PrjPrevisaoTempo',
       image: PrevisaoTempo,
       badges: [
         'https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white',
@@ -138,8 +138,8 @@ export default {
       id: 5,
       title: 'Conversor de Moedas',
       description: 'Aplicativo Desktop desenvolvido em C# .NET 5.0. O objetivo seria mostrar o uso de APIs para desenvolvimento do Projeto. O aplicativo tem o objetivo de converter a maioria das moedas entre si em tempo real.',
-      // deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      deployUrl: 'https://github.com/GustaBrito/PrjConversorMoeda/releases/tag/v1.0',
+      githubUrl: 'https://github.com/GustaBrito/PrjConversorMoeda',
       image: ConversorMoeda,
       badges: [
         'https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white',
@@ -152,8 +152,8 @@ export default {
       id: 6,
       title: 'Gerador de Senha',
       description: 'Aplicativo Desktop desenvolvido em C# .NET 5.0. O aplicativo usa uma estrutura para geração de senhas conforme voce vai definindo como você deseja ela.',
-      // deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      deployUrl: 'https://github.com/GustaBrito/PrjGeradorSenha/releases/tag/v1.0',
+      githubUrl: 'https://github.com/GustaBrito/PrjGeradorSenha',
       image: GeradorSenha,
       badges: [
         'https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white',
@@ -165,8 +165,8 @@ export default {
       id: 7,
       title: 'Jogo da Velha',
       description: 'Aplicativo Desktop desenvolvido em C# .NET 5.0. Aplicativo bem simples, com sistema de turnos e pontuação para emular um jogo da velha.',
-      // deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      deployUrl: 'https://github.com/GustaBrito/PrjJogoDaVelha/releases/tag/v1.0',
+      githubUrl: 'https://github.com/GustaBrito/PrjJogoDaVelha',
       image: JogoDaVelha,
       badges: [
         'https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white',
@@ -178,8 +178,8 @@ export default {
       id: 8,
       title: 'Calculadora Simples',
       description: 'Aplicativo Desktop desenvolvido em C# .NET 5.0. O que não poderia faltar, seria uma calculadora simples com sistema de atalhos para teclas, funcionamento de boto~es, como se fosse uma calculadora em sua versão mais simples.',
-      // deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      deployUrl: 'https://github.com/GustaBrito/CalculadoraSimples/releases/tag/v1.0',
+      githubUrl: 'https://github.com/GustaBrito/CalculadoraSimples',
       image: CalculadoraSimples,
       badges: [
         'https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white',
@@ -191,8 +191,8 @@ export default {
       id: 9,
       title: 'Em construção',
       description: '',
-      deployUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      // deployUrl: 'https://example.com',
+      // githubUrl: 'https://github.com',
       image: Desenvolvimento,
 
     }
