@@ -1,60 +1,40 @@
 🚀 Portfólio Interativo com React, TypeScript e Framer Motion
-Este projeto é um portfólio pessoal interativo e responsivo, desenvolvido com as melhores práticas em React e TypeScript. A interface oferece uma experiência visual diferenciada com efeitos animados criados via Framer Motion, além de um sistema persistente de modo claro/escuro utilizando localStorage.
 
-✨ Funcionalidades Principais:
-🌐 Navegação fluida entre seções com ancoragem suave (about, timeline, projects, contact), garantindo acessibilidade e uma experiência consistente.
+Este é um portfólio pessoal, totalmente interativo e responsivo, criado seguindo as melhores práticas com React e TypeScript. A interface proporciona uma experiência visual marcante, com animações dinâmicas geradas pelo Framer Motion, além de um sistema de tema claro/escuro persistente via localStorage.
 
-🎨 Tema Claro/Escuro com persistência automática via localStorage.
-
-🌍 Internacionalização (i18n) com react-i18next, oferecendo suporte multilíngue (Português e Inglês).
-
-🔁 Animação de flip no avatar com versão LEGO utilizando motion.div do Framer Motion.
-
-📁 Arquitetura modular, com cada seção isolada em seus próprios componentes .tsx e .css, facilitando manutenção e escalabilidade.
-
-📌 Layout adaptativo, com menu inteligente 3x2 para dispositivos móveis.
-
-💼 Integrações diretas com LinkedIn e GitHub.
-
-🧩 Imagens otimizadas com loading="lazy", melhorando a performance.
-
-💥 Efeitos especiais com animação de raio laser saindo dos olhos, adicionando uma camada extra de personalidade ao portfólio.
-
+✨ Principais Funcionalidades:
+🌐 Navegação suave entre as seções (about, timeline, projects, contact), garantindo acessibilidade e uma experiência consistente.
+🎨 Alternância entre tema claro e escuro, com persistência automática usando localStorage.
+🌍 Suporte multilíngue (Português e Inglês) implementado com react-i18next.
+🔁 Animação de flip no avatar estilo LEGO, criada com motion.div do Framer Motion.
+📁 Arquitetura modular: cada seção isolada em componentes .tsx e .css, facilitando manutenção e escalabilidade.
+📌 Layout adaptativo com um menu inteligente no formato 3x2, ideal para dispositivos móveis.
+💼 Integração direta com perfis no LinkedIn e GitHub.
+🧩 Imagens otimizadas utilizando loading="lazy" para melhorar a performance.
+💥 Efeitos especiais, como um laser saindo dos olhos, que adicionam personalidade ao projeto.
 🖼️ Visual do Projeto
-O portfólio apresenta:
 
-Tela inicial com animação interativa (olhos que seguem o cursor e ativam um laser!).
-
-Seção "Sobre" com avatar animado e informações de perfil.
-
-Linha do tempo profissional (trajetória) dinâmica e organizada.
-
-Galeria de projetos destacados, cada um com link para aplicação e código-fonte.
-
-Formulário de contato funcional, estilizado e com integração visual às redes sociais.
-
-(Veja as imagens na galeria do repositório para conferir os detalhes visuais!)
-
+O portfólio inclui:
+Tela inicial com olhos interativos que seguem o cursor e disparam laser.
+Seção "Sobre" com avatar animado e detalhes de perfil.
+Linha do tempo profissional dinâmica, mostrando a trajetória.
+Galeria de projetos destacados, com links para aplicação e código-fonte.
+Formulário de contato funcional, com estilo alinhado às redes sociais.
+(Confira as imagens na galeria do repositório para ver mais detalhes visuais!)
 🛠️ Tecnologias Utilizadas:
+
 React
-
 TypeScript
-
 Framer Motion
-
 React-i18next
-
 CSS Modules
-
 LocalStorage
-
 GitHub Pages (para deploy)
 
 ✅ Organização
-Repositório estruturado com foco em:
 
-Tipagem forte para segurança no desenvolvimento.
+O repositório foi estruturado com foco em:
+Tipagem forte, garantindo segurança no desenvolvimento.
+Boas práticas de código, com clara separação de responsabilidades.
+Escalabilidade, permitindo fácil adição de novas seções ou funcionalidades.
 
-Boas práticas de código e separação de responsabilidades.
-
-Escalabilidade para fácil adição de novas seções ou funcionalidades.
