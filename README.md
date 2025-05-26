@@ -25,26 +25,42 @@ Este é um portfólio pessoal, totalmente interativo e responsivo, criado seguin
 🖼️ Visual do Projeto
 
 O portfólio inclui:
+
 Tela inicial com olhos interativos que seguem o cursor e disparam laser.
+
 Seção "Sobre" com avatar animado e detalhes de perfil.
+
 Linha do tempo profissional dinâmica, mostrando a trajetória.
+
 Galeria de projetos destacados, com links para aplicação e código-fonte.
+
 Formulário de contato funcional, com estilo alinhado às redes sociais.
+
 (Confira as imagens na galeria do repositório para ver mais detalhes visuais!)
+
 🛠️ Tecnologias Utilizadas:
 
 React
+
 TypeScript
+
 Framer Motion
+
 React-i18next
+
 CSS Modules
+
 LocalStorage
+
 GitHub Pages (para deploy)
 
 ✅ Organização
 
 O repositório foi estruturado com foco em:
+
 Tipagem forte, garantindo segurança no desenvolvimento.
+
 Boas práticas de código, com clara separação de responsabilidades.
+
 Escalabilidade, permitindo fácil adição de novas seções ou funcionalidades.
 
