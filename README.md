@@ -26,7 +26,7 @@ Este é um portfólio pessoal, totalmente interativo e responsivo, criado seguin
 💥 Efeitos especiais, como um laser saindo dos olhos, que adicionam personalidade ao projeto.
 
 <h2 align="center">
-## 🖼️ Visual do Projeto
+ 🖼️ Visual do Projeto
 </h2>
 
 O portfólio inclui:
