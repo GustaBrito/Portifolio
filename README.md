@@ -36,7 +36,23 @@ Galeria de projetos destacados, com links para aplicação e código-fonte.
 
 Formulário de contato funcional, com estilo alinhado às redes sociais.
 
-(Confira as imagens na galeria do repositório para ver mais detalhes visuais!)
+## 🖼️ Galeria
+
+### Tela Inicial / Efeito Laser
+![Tela Inicial](./assets/portfolio-inicio.png)
+![Efeito Laser](./assets/portfolio-laser.png)
+
+### Sobre
+![Sobre](./assets/portfolio-sobre.png)
+
+### Timeline
+![Timeline](./assets/portfolio-sobre.png)
+
+### Projetos
+![Projetos](./assets/portfolio-sobre.png)
+
+### Contato
+![Contato](./assets/portfolio-sobre.png)
 
 🛠️ Tecnologias Utilizadas:
 
