@@ -1,10 +1,10 @@
 <h1 align="center">
-  ## 🚀 Portfólio Interativo com React, TypeScript e Framer Motion
+   🚀 Portfólio Interativo com React, TypeScript e Framer Motion
 </h1>
 Este é um portfólio pessoal, totalmente interativo e responsivo, criado seguindo as melhores práticas com React e TypeScript. A interface proporciona uma experiência visual marcante, com animações dinâmicas geradas pelo Framer Motion, além de um sistema de tema claro/escuro persistente via localStorage.
 
 <h2 align="center">
-## ✨ Principais Funcionalidades:
+ ✨ Principais Funcionalidades:
 </h2>
 
 🌐 Navegação suave entre as seções (about, timeline, projects, contact), garantindo acessibilidade e uma experiência consistente.
@@ -42,7 +42,7 @@ Galeria de projetos destacados, com links para aplicação e código-fonte.
 Formulário de contato funcional, com estilo alinhado às redes sociais.
 
 <h2 align="center">
-## 🖼️ Galeria
+ 🖼️ Galeria
 </h2>
 <div align="center">
 
