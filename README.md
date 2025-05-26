@@ -1,8 +1,11 @@
-🚀 Portfólio Interativo com React, TypeScript e Framer Motion
-
+<h1 align="center">
+  ## 🚀 Portfólio Interativo com React, TypeScript e Framer Motion
+</h1>
 Este é um portfólio pessoal, totalmente interativo e responsivo, criado seguindo as melhores práticas com React e TypeScript. A interface proporciona uma experiência visual marcante, com animações dinâmicas geradas pelo Framer Motion, além de um sistema de tema claro/escuro persistente via localStorage.
 
-✨ Principais Funcionalidades:
+<h2 align="center">
+## ✨ Principais Funcionalidades:
+</h2>
 
 🌐 Navegação suave entre as seções (about, timeline, projects, contact), garantindo acessibilidade e uma experiência consistente.
 
@@ -22,7 +25,9 @@ Este é um portfólio pessoal, totalmente interativo e responsivo, criado seguin
 
 💥 Efeitos especiais, como um laser saindo dos olhos, que adicionam personalidade ao projeto.
 
-🖼️ Visual do Projeto
+<h2 align="center">
+## 🖼️ Visual do Projeto
+</h2>
 
 O portfólio inclui:
 
@@ -36,25 +41,32 @@ Galeria de projetos destacados, com links para aplicação e código-fonte.
 
 Formulário de contato funcional, com estilo alinhado às redes sociais.
 
+<h2 align="center">
 ## 🖼️ Galeria
+</h2>
+<div align="center">
 
 ### Tela Inicial / Efeito Laser
-![Tela Inicial](./assets/portfolio-inicio.png)
-![Efeito Laser](./assets/portfolio-laser.png)
+<img src="./FotosPortifolio/Inicio.png" alt="Tela Inicial" width="500"/>
+<img src="./FotosPortifolio/Laser.png" alt="Efeito Laser" width="500"/>
 
 ### Sobre
-![Sobre](./assets/portfolio-sobre.png)
+<img src="./FotosPortifolio/Sobre.png" alt="Sobre" width="600"/>
 
 ### Timeline
-![Timeline](./assets/portfolio-sobre.png)
+<img src="./FotosPortifolio/Timeline.png" alt="Timeline" width="600"/>
 
 ### Projetos
-![Projetos](./assets/portfolio-sobre.png)
+<img src="./FotosPortifolio/Projetos.png" alt="Projetos" width="600"/>
 
 ### Contato
-![Contato](./assets/portfolio-sobre.png)
+<img src="./FotosPortifolio/Contato.png" alt="Contato" width="600"/>
 
+</div>
+
+<h2 align="center">
 🛠️ Tecnologias Utilizadas:
+</h2>
 
 React
 
@@ -70,7 +82,9 @@ LocalStorage
 
 GitHub Pages (para deploy)
 
+<h2 align="center">
 ✅ Organização
+</h2>
 
 O repositório foi estruturado com foco em:
 
